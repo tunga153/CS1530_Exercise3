@@ -11,6 +11,10 @@ public class Exercise3 {
     int number;
     try {
       number = Integer.parseInt(args[0]);
+      if (number < 0) {
+        System.out.println("Please a valid (positive integer) argument...");
+        System.exit(1);
+      }
 
       int tri = triangle(number);
       int lc = lazyCaterer(number);
