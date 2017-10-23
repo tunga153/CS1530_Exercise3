@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "CS1530.Exercise3"
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  testCompile 'junit:junit:4.12'
+}
+
+task sequencehelp {
+  doLast {
+    println "Integer Sequence Project"
+    println "Given an integer n as an argument, displays Tri(n) and LC(n)."
+  }
+}
+
+run {
+  try {
+    systemProperties System.getProperties()
+    args System.getProperty("args").split()
+  } catch (Exception e) {
+    // println "Please add -Dargs=\"...\" even if it is empty"
+  }
+}
